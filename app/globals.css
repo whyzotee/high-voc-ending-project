@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Kanit', sans-serif;
+}
+
+.header{
+  text-shadow:  -1px -1px 0 #000,  
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+   1px 1px 0 #000;
+}
+
+.rmscrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+.rmscrollbar {
+  -ms-overflow-style: none !important;  
+  scrollbar-width: none !important;  
+}
