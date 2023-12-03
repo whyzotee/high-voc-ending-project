@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Sidebar from "./components/sidebar";
 import {
+  Button,
   Modal,
   ModalContent,
   ModalHeader,
@@ -25,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="h-screen w-full flex bg-[#5CD1FF]">
+      <main className="h-screen w-full flex">
         <Sidebar />
         <Modal
           backdrop="blur"
@@ -65,45 +66,84 @@ export default function Home() {
             </ModalBody>
           </ModalContent>
         </Modal>
-        <div className="h-full w-[100%] flex flex-col justify-center items-center gap-4 ">
-          <div className="relative border-[2.5px] border-black rounded-sm bg-yellow-50 px-12 py-2 text-center font-bold">
-            <Image
-              src="/images/icons/calendar.png"
-              alt="calendar_logo"
-              height={75}
-              width={75}
-              className="absolute -left-8 top-1/2 -translate-y-1/2"
-            />
-            <h1>TIMELINE</h1>
-            <h1>MANAGE</h1>
-            <h1>MENT</h1>
+        <div className="h-full max-w-7xl w-full m-auto">
+          <div className="flex flex-col my-4">
+            <span className="text-xl">ยินดีต้อนรับ</span>
+            <span className="text-gray-400">Home - mainpage</span>
           </div>
-          {days.map((day) => (
-            <div className="grid grid-cols-10 gap-4" key={day}>
-              <div className={customCss + "bg-white border-dashed"}>
-                <h1 className="text-2xl">{day}</h1>
-              </div>
-              {rowMon.map((element) => {
-                if (element == 4) {
-                  return (
-                    <button onClick={onOpen} key={element}>
-                      <div className={customCss + "bg-orange-300"}>
-                        <span className={customPlusBtn}>+</span>
-                      </div>
-                    </button>
-                  );
-                } else {
-                  return (
-                    <button onClick={onOpen} key={element}>
-                      <div className={customCss + "bg-white"}>
-                        <span className={customPlusBtn}>+</span>
-                      </div>
-                    </button>
-                  );
-                }
-              })}
+          <div className="w-fit bg-white border-[2.5px] border-black rounded-md shadow-lg">
+            <div className="flex gap-4 p-4 border-b-[2.5px] border-black">
+              <Button color="primary" variant="solid" radius="sm">
+                วันจันทร์
+              </Button>
+              <Button color="primary" variant="light" radius="sm">
+                วันอังคาร
+              </Button>
+              <Button color="primary" variant="light" radius="sm">
+                วันพุธ
+              </Button>
+              <Button color="primary" variant="light" radius="sm">
+                วันพฤหัสบดี
+              </Button>
+              <Button color="primary" variant="light" radius="sm">
+                วันศุกร์
+              </Button>
             </div>
-          ))}
+            <table className="w-[50rem] table-fixed m-4">
+              <tbody>
+                <tr className="flex justify-between items-center">
+                  <td>08:43-09:43am</td>
+                  <td>
+                    <span className="text-gray-400">เรื่อง: </span>
+                    ประชาสัมพันธ์บลาๆบลาๆ
+                  </td>
+                  <td>
+                    <Button color="primary" variant="light">
+                      ตัวอย่าง
+                    </Button>
+                    <Button color="danger" variant="light">
+                      แก้ไข้
+                    </Button>
+                  </td>
+                </tr>
+                <tr className="flex justify-between items-center">
+                  <td>09:40-11:20am</td>
+                  <td>
+                    <span className="text-gray-400">เรื่อง: </span>
+                    ประชาสัมพันธ์บลาๆบลาๆ
+                  </td>
+                  <td>
+                    <Button color="primary" variant="light">
+                      ตัวอย่าง
+                    </Button>
+                    <Button color="danger" variant="light">
+                      แก้ไข้
+                    </Button>
+                  </td>
+                </tr>
+                <tr className="flex justify-between items-center">
+                  <td>10:35-43:09am</td>
+                  <td>
+                    <span className="text-gray-400">เรื่อง: </span>
+                    ประชาสัมพันธ์บลาๆบลาๆ
+                  </td>
+                  <td>
+                    <Button color="primary" variant="light">
+                      ตัวอย่าง
+                    </Button>
+                    <Button color="danger" variant="light">
+                      แก้ไข้
+                    </Button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div className="pr-4 pb-4 flex justify-end">
+              <Button color="primary" variant="solid" radius="sm">
+                เพิ่มสื่อ
+              </Button>
+            </div>
+          </div>
         </div>
       </main>
     </>

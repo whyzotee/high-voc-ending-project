@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import supabase from "@/app/supabase";
+import { Button } from "@nextui-org/react";
 
 export default function Sidebar() {
   const router = useRouter();
@@ -26,12 +27,12 @@ export default function Sidebar() {
           <h1>แผนกอิเล็กทรอนิกส์</h1>
         </div>
       </div>
-      <div className="p-4 flex flex-col gap-4">
-        <button onClick={() => router.push("/")}>
+      <div className="w-full flex flex-col p-4 gap-4 items-center">
+        <button className="w-[80%]" onClick={() => router.push("/")}>
           <div
             className={
-              (pathName === "/" ? "bg-[#5CD1FF]" : "") +
-              " flex gap-2 items-center pl-8 p-2 border-2 border-black rounded-md"
+              (pathName === "/" ? "bg-[#5CD1FF] " : "") +
+              "flex gap-2 items-center p-2 border-2 border-black rounded-md"
             }
           >
             {pathName === "/" ? (
@@ -65,19 +66,17 @@ export default function Sidebar() {
               </>
             )}
 
-            <h1
-              className={(pathName === "/" ? "text-white" : "") + " text-2xl"}
-            >
+            <h1 className={(pathName === "/" ? "text-white" : "") + " text-xl"}>
               หน้าหลัก
             </h1>
           </div>
         </button>
 
-        <button onClick={() => router.push("/file")}>
+        <button className="w-[80%]" onClick={() => router.push("/file")}>
           <div
             className={
-              (pathName === "/file" ? "bg-[#5CD1FF]" : "") +
-              " flex gap-2 items-center pl-8 p-2 border-2 border-black rounded-md"
+              (pathName === "/file" ? "bg-[#5CD1FF] " : "") +
+              "flex gap-2 items-center p-2 border-2 border-black rounded-md"
             }
           >
             {pathName === "/file" ? (
@@ -112,14 +111,23 @@ export default function Sidebar() {
 
             <h1
               className={
-                (pathName === "/file" ? "text-white" : "") + " text-2xl"
+                (pathName === "/file" ? "text-white" : "") + " text-xl"
               }
             >
               จัดการไฟล์
             </h1>
           </div>
         </button>
-        <button onClick={handleSignOut}>Sing Out</button>
+
+        <Button
+          className="absolute bottom-6"
+          color="danger"
+          variant="light"
+          radius="sm"
+          onClick={handleSignOut}
+        >
+          ออกจากระบบ
+        </Button>
       </div>
     </div>
   );
