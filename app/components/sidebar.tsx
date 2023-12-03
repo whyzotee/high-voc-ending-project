@@ -14,7 +14,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sidebar h-screen min-w-fit flex flex-col bg-white border-[2.5px] border-black rounded-md">
+    <div className="sidebar min-h-screen min-w-fit flex flex-col bg-white border-[2.5px] border-black rounded-md sticky">
       <div className="flex p-2 items-center border-b-[2.5px] border-black">
         <Image
           src="/images/elec_logo.png"
@@ -31,7 +31,7 @@ export default function Sidebar() {
         <button className="w-[80%]" onClick={() => router.push("/")}>
           <div
             className={
-              (pathName === "/" ? "bg-[#5CD1FF] " : "") +
+              (pathName === "/" ? "bg-[#2FA8FF] " : "") +
               "flex gap-2 items-center p-2 border-2 border-black rounded-md"
             }
           >
@@ -75,7 +75,7 @@ export default function Sidebar() {
         <button className="w-[80%]" onClick={() => router.push("/file")}>
           <div
             className={
-              (pathName === "/file" ? "bg-[#5CD1FF] " : "") +
+              (pathName === "/file" ? "bg-[#2FA8FF] " : "") +
               "flex gap-2 items-center p-2 border-2 border-black rounded-md"
             }
           >
