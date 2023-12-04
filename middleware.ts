@@ -15,6 +15,10 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL("/stream", req.url));
   }
 
+  if (user && req.nextUrl.pathname === "/auth/signin") {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
+
   if (!user && req.nextUrl.pathname !== "/auth/signin") {
     return NextResponse.redirect(new URL("/auth/signin", req.url));
   }

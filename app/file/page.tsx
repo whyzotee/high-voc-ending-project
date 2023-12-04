@@ -9,7 +9,6 @@ export default function FilePage() {
 
   return (
     <main className="h-screen w-full flex bg-[#5CD1FF]">
-      <Sidebar />
       <div className="h-full w-full flex flex-col gap-36 items-center justify-center ">
         <h1 className="text-5xl bg-yellow-300 px-4 py-2 rounded-full border-[2.5px] border-black text-orange-500 font-bold header">
           File Manager
